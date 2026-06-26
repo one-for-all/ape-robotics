@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; background:#0a1228; }
+  @keyframes apeSpin { to { transform: rotate(360deg); } }
+  @keyframes apeTwinkle { 0%,100%{ opacity:.25; transform:scale(.7);} 50%{ opacity:1; transform:scale(1.2);} }
+  @keyframes apeFloat { 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-12px);} }
+</style>
+</helmet>
+
+<div data-screen-label="Ape Robotics" style="width:100%; max-width:1360px; margin:0 auto; background:#0a1228; overflow:hidden; font-family:'IBM Plex Sans',sans-serif; color:#f4ecd6;">
+
+    <!-- NAV -->
+    <nav style="display:flex; align-items:center; justify-content:space-between; padding:24px 48px; position:relative; z-index:6;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:36px; height:36px; border-radius:50%; background:radial-gradient(circle at 50% 34%, #f6d579, #c1881f); display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(242,193,78,.4);">
+
+        <div style="position: relative; width: 24px; height: 24px; border-radius: 50%; background: #0a1228">
+            <div style="position:absolute; top:7px; left:4px; width:5px; height:5px; border-radius:50%; background:#f6d579;"></div>
+            <div style="position:absolute; top:7px; right:4px; width:5px; height:5px; border-radius:50%; background:#f6d579;"></div>
+          </div></div>
+        <span style="font-family:'Spectral',serif; font-style:italic; font-size:21px; color:#f4ecd6;">Ape</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.24em; text-transform:uppercase; color:#9bb4d8; margin-left:-2px;">Robotics</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:34px;">
+        <a href="#features" style="color:#cdd9ef; text-decoration:none; font-size:14px; font-weight:500;">Product</a>
+        <a href="#how" style="color:#cdd9ef; text-decoration:none; font-size:14px; font-weight:500;">How it works</a>
+        <a href="#showcase" style="color:#cdd9ef; text-decoration:none; font-size:14px; font-weight:500;">Showcase</a>
+        <a href="#contact" style="display:inline-flex; align-items:center; gap:8px; padding:11px 22px; border-radius:40px; background:linear-gradient(180deg,#f2c14e,#dba62f); color:#1a1408; font-weight:600; font-size:14px; text-decoration:none; box-shadow:0 8px 24px rgba(242,193,78,.32);">Get in touch</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header style="position:relative; padding:96px 48px 124px; overflow:hidden; background:radial-gradient(900px 520px at 78% 12%, rgba(242,193,78,.20), transparent 62%), radial-gradient(820px 640px at 12% 28%, rgba(47,111,176,.40), transparent 60%), radial-gradient(680px 520px at 62% 80%, rgba(29,74,143,.42), transparent 62%), linear-gradient(165deg,#0a1228 0%,#0f1d3f 48%,#0a1530 100%);">
+      <div style="position:absolute; inset:-25%; z-index:1; opacity:.45; pointer-events:none; background:conic-gradient(from 40deg at 38% 42%, rgba(47,111,176,0), rgba(86,140,200,.55) 25%, rgba(22,48,107,.05) 50%, rgba(110,160,215,.5) 72%, rgba(47,111,176,0) 100%); filter:blur(40px); animation:apeSpin 90s linear infinite;"></div>
+      <div style="position:absolute; inset:-12% -10% 0 -10%; z-index:1; opacity:.4; pointer-events:none; background:conic-gradient(from 220deg at 70% 60%, rgba(70,120,180,0), rgba(150,185,230,.5) 30%, rgba(30,60,120,.05) 55%, rgba(90,150,210,.45) 80%, rgba(70,120,180,0)); filter:blur(48px); animation:apeSpin 120s linear infinite reverse;"></div>
+
+      <!-- moon -->
+      <div style="position:absolute; top:64px; right:104px; width:118px; height:118px; border-radius:50%; z-index:2; background:radial-gradient(circle at 40% 40%, #f9eec0, #e8c45f 54%, rgba(232,196,95,0) 72%); box-shadow:0 0 70px 18px rgba(242,193,78,.32); animation:apeFloat 9s ease-in-out infinite;"></div>
+
+      <!-- stars -->
+      <sc-if value="{{ showStars }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute; z-index:2; pointer-events:none; inset:0;">
+          <div style="position:absolute; top:118px; left:120px; width:4px; height:4px; border-radius:50%; background:#f7e8b3; box-shadow:0 0 10px 2px rgba(242,193,78,.6); animation:apeTwinkle 3.2s ease-in-out infinite;"></div>
+          <div style="position:absolute; top:206px; left:300px; width:3px; height:3px; border-radius:50%; background:#f7e8b3; box-shadow:0 0 8px 2px rgba(242,193,78,.55); animation:apeTwinkle 4.1s ease-in-out .4s infinite;"></div>
+          <div style="position:absolute; top:92px; left:540px; width:5px; height:5px; border-radius:50%; background:#f7e8b3; box-shadow:0 0 12px 2px rgba(242,193,78,.6); animation:apeTwinkle 3.8s ease-in-out .9s infinite;"></div>
+          <div style="position:absolute; top:150px; left:980px; width:3px; height:3px; border-radius:50%; background:#f7e8b3; box-shadow:0 0 8px 2px rgba(242,193,78,.5); animation:apeTwinkle 4.6s ease-in-out .2s infinite;"></div>
+          <div style="position:absolute; top:300px; left:200px; width:4px; height:4px; border-radius:50%; background:#f7e8b3; box-shadow:0 0 10px 2px rgba(242,193,78,.55); animation:apeTwinkle 3.5s ease-in-out 1.3s infinite;"></div>
+          <div style="position:absolute; top:120px; left:1190px; width:4px; height:4px; border-radius:50%; background:#f7e8b3; box-shadow:0 0 10px 2px rgba(242,193,78,.55); animation:apeTwinkle 4.2s ease-in-out .7s infinite;"></div>
+          <div style="position:absolute; top:330px; left:1060px; width:3px; height:3px; border-radius:50%; background:#f7e8b3; box-shadow:0 0 8px 2px rgba(242,193,78,.5); animation:apeTwinkle 3.9s ease-in-out 1.1s infinite;"></div>
+          <div style="position:absolute; top:386px; left:640px; width:4px; height:4px; border-radius:50%; background:#f7e8b3; box-shadow:0 0 10px 2px rgba(242,193,78,.55); animation:apeTwinkle 4.4s ease-in-out .5s infinite;"></div>
+        </div>
+      </sc-if>
+
+      <!-- painterly grain -->
+      <sc-if value="{{ painterly }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute; inset:0; z-index:2; opacity:.22; mix-blend-mode:overlay; pointer-events:none; background-image:url(&quot;data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'&gt;&lt;filter id='n'&gt;&lt;feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/&gt;&lt;/filter&gt;&lt;rect width='100%25' height='100%25' filter='url(%23n)'/&gt;&lt;/svg&gt;&quot;); background-size:170px;"></div>
+      </sc-if>
+
+      <div style="position:relative; z-index:3; max-width:880px; margin:0 auto; text-align:center;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#9bb4d8; margin-bottom:26px;">Browser-native robot simulation</div>
+        <h1 style="font-family:'Spectral',serif; font-weight:500; font-size:66px; line-height:1.06; letter-spacing:-.5px; margin:0; color:#f7f0db;">Showcase and iterate your robot<br><em style="font-style:italic; color:#f2c14e;">without hassle.</em></h1>
+        <p style="max-width:600px; margin:30px auto 0; font-size:19px; line-height:1.65; color:#c7d2e8;">Spin up a physically accurate simulation of your robot in the browser — and run it on the very same firmware you'd flash to real hardware. No rig. No risk. Just creation.</p>
+        <div style="display:flex; gap:16px; justify-content:center; margin-top:40px;">
+          <a href="#contact" style="display:inline-flex; align-items:center; gap:8px; padding:15px 28px; border-radius:40px; background:linear-gradient(180deg,#f2c14e,#dba62f); color:#1a1408; font-weight:600; font-size:15px; text-decoration:none; box-shadow:0 10px 30px rgba(242,193,78,.34);">Get in touch</a>
+          <a href="https://bittlex-sim.petoi.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:15px 26px; border-radius:40px; background:rgba(244,236,214,.06); color:#f4ecd6; font-weight:500; font-size:15px; text-decoration:none; border:1px solid rgba(244,236,214,.26);">See it live &nbsp;↗</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- BENEFITS -->
+    <section style="background:#0c1730; padding:92px 48px; border-top:1px solid rgba(155,180,216,.12);">
+      <div style="text-align:center; max-width:680px; margin:0 auto;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#9bb4d8;">Why teams use Ape</div>
+        <h2 style="font-family:'Spectral',serif; font-weight:500; font-size:40px; line-height:1.12; margin:16px 0 0; color:#f4ecd6;">Share a working robot with anyone, anywhere.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:58px;">
+        <div style="background:linear-gradient(180deg, rgba(244,236,214,.055), rgba(244,236,214,.02)); border:1px solid rgba(155,180,216,.14); border-radius:18px; padding:32px 30px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#f2c14e; letter-spacing:.1em;">01</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:500; font-size:23px; margin:14px 0 10px; color:#f4ecd6;">Share in a single link</h3>
+          <p style="font-size:15px; line-height:1.66; color:#b3c2dd; margin:0;">Send anyone an interactive simulation of your robot. They click — it runs. No install, no setup, no shipping a prototype across the country.</p>
+        </div>
+        <div style="background:linear-gradient(180deg, rgba(244,236,214,.055), rgba(244,236,214,.02)); border:1px solid rgba(155,180,216,.14); border-radius:18px; padding:32px 30px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#f2c14e; letter-spacing:.1em;">02</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:500; font-size:23px; margin:14px 0 10px; color:#f4ecd6;">Build without the bench</h3>
+          <p style="font-size:15px; line-height:1.66; color:#b3c2dd; margin:0;">Program and iterate without the hardware on hand — and with zero risk of frying a board, stripping a gear, or burning out a motor.</p>
+        </div>
+        <div style="background:linear-gradient(180deg, rgba(244,236,214,.055), rgba(244,236,214,.02)); border:1px solid rgba(155,180,216,.14); border-radius:18px; padding:32px 30px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#f2c14e; letter-spacing:.1em;">03</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:500; font-size:23px; margin:14px 0 10px; color:#f4ecd6;">Try every what-if</h3>
+          <p style="font-size:15px; line-height:1.66; color:#b3c2dd; margin:0;">Swap bodies, materials, motors, sensors and environments. Explore a design space before you commit a single screw to it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES (light, technical) -->
+    <section id="features" style="background:#f4ecd6; color:#16203a; padding:98px 48px;">
+      <div style="max-width:720px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#2c5aa0;">How it works</div>
+        <h2 id="how" style="font-family:'Spectral',serif; font-weight:500; font-size:42px; line-height:1.1; margin:16px 0 0;">Two kinds of accurate.</h2>
+        <p style="font-size:18px; line-height:1.6; color:#3a486a; margin:16px 0 0;">A simulation is only useful if you can trust it. Ape is built so the behavior you see in the browser matches the robot on your desk.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:52px;">
+        <div style="border:1px solid rgba(20,32,58,.12); border-radius:20px; padding:38px; background:#faf4e2;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.18em; color:#2c5aa0;">PHYSICS</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:500; font-size:27px; margin:14px 0 12px;">Physically accurate</h3>
+          <p style="font-size:16px; line-height:1.66; color:#3a486a; margin:0;">Real rigid-body physics — collisions, contact forces, mass, inertia and friction. Not a pretty visualization of joint angles, but a faithful model of how your robot actually moves and falls.</p>
+        </div>
+        <div style="border:1px solid rgba(20,32,58,.12); border-radius:20px; padding:38px; background:#faf4e2;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.18em; color:#2c5aa0;">FIRMWARE</div>
+          <h3 style="font-family:'Spectral',serif; font-weight:500; font-size:27px; margin:14px 0 12px;">Hardware accurate</h3>
+          <p style="font-size:16px; line-height:1.66; color:#3a486a; margin:0;">It executes your real firmware — not generic torque or joint-angle control. The exact code you flash to the robot runs in the sim, so simulation and hardware share one source of truth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOWCASE -->
+    <section id="showcase" style="position:relative; overflow:hidden; background:radial-gradient(800px 500px at 80% 20%, rgba(47,111,176,.3), transparent 60%), linear-gradient(160deg,#0a1228,#0f1d3f);">
+      <div style="position:relative; z-index:2; padding:96px 48px;">
+        <div style="text-align:center; max-width:720px; margin:0 auto 48px;">
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#9bb4d8;">Customer showcase</div>
+          <h2 style="font-family:'Spectral',serif; font-weight:500; font-size:40px; line-height:1.12; margin:16px 0 0; color:#f4ecd6;">A real robot, running in your browser.</h2>
+          <p style="font-size:17px; line-height:1.6; color:#c7d2e8; margin:16px 0 0;">We built an interactive simulation of Petoi's Bittle&nbsp;X quadruped — programmable with its real firmware, shareable with anyone.</p>
+        </div>
+        <a href="https://bittlex-sim.petoi.com/" target="_blank" rel="noopener" style="display:block; max-width:980px; margin:0 auto; border-radius:18px; overflow:hidden; border:1px solid rgba(242,193,78,.28); box-shadow:0 24px 70px rgba(0,0,0,.45); text-decoration:none;">
+          <div style="display:flex; align-items:center; gap:8px; padding:12px 16px; background:#0c1424; border-bottom:1px solid rgba(155,180,216,.16);">
+            <div style="width:11px; height:11px; border-radius:50%; background:#e05c54;"></div>
+            <div style="width:11px; height:11px; border-radius:50%; background:#e7b94e;"></div>
+            <div style="width:11px; height:11px; border-radius:50%; background:#5bb86a;"></div>
+            <div style="margin-left:14px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#9bb4d8;">bittlex-sim.petoi.com</div>
+          </div>
+          <div style="position:relative; aspect-ratio:16/9; overflow:hidden; background:#0a1228;">
+            <img src="assets/bittle-x-sim.png" alt="Bittle X quadruped simulation running in the browser" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg, rgba(10,18,40,.04), rgba(10,18,40,.34));">
+              <div style="width:62px; height:62px; border-radius:50%; background:rgba(242,193,78,.94); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 28px rgba(0,0,0,.45);">
+                <div style="width:0; height:0; border-top:11px solid transparent; border-bottom:11px solid transparent; border-left:18px solid #1a1408; margin-left:5px;"></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:18px 22px; background:#0c1424;">
+            <span style="font-size:15px; color:#c7d2e8;">Built for <strong style="color:#f4ecd6;">Petoi</strong> — the Bittle&nbsp;X quadruped.</span>
+            <span style="display:inline-flex; align-items:center; gap:8px; color:#f2c14e; font-weight:600; font-size:15px;">Open live simulation&nbsp;↗</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- VALUE BAND -->
+    <section style="position:relative; overflow:hidden; text-align:center; padding:96px 48px; background:radial-gradient(700px 460px at 50% 10%, rgba(242,193,78,.12), transparent 60%), linear-gradient(165deg,#0f1d3f,#0a1228);">
+      <p style="font-family:'Spectral',serif; font-style:italic; font-weight:400; font-size:38px; line-height:1.32; max-width:840px; margin:0 auto; color:#f4ecd6;">"Creation and relationship are what bring joy to life."</p>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#9bb4d8; margin-top:26px;">— the idea behind Ape Robotics</div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="background:#0c1730; padding:96px 48px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; max-width:1080px; margin:0 auto; align-items:start;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#9bb4d8;">Get in touch</div>
+          <h2 style="font-family:'Spectral',serif; font-weight:500; font-size:40px; line-height:1.12; margin:16px 0 0; color:#f4ecd6;">Tell us what you're building.</h2>
+          <p style="font-size:17px; line-height:1.66; color:#c7d2e8; margin:20px 0 0;">Whether you're a team shipping robots to production or a hobbyist tinkering on a weekend build — if a browser-based simulation could help, we'd love to hear from you.</p>
+          <div style="display:flex; flex-direction:column; gap:14px; margin-top:30px;">
+            <div style="display:flex; align-items:center; gap:12px; color:#b3c2dd; font-size:15px;"><span style="color:#f2c14e;">◆</span> Companies &amp; teams — let's talk integration.</div>
+            <div style="display:flex; align-items:center; gap:12px; color:#b3c2dd; font-size:15px;"><span style="color:#f2c14e;">◆</span> Hobbyists &amp; makers — come build with us.</div>
+          </div>
+        </div>
+
+        <div style="background:rgba(244,236,214,.97); color:#16203a; border-radius:22px; padding:38px; box-shadow:0 24px 60px rgba(0,0,0,.35);">
+          <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ onSubmit }}" style="display:flex; flex-direction:column; gap:18px;">
+              <div>
+                <label style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#2c5aa0;">Name</label>
+                <input type="text" value="{{ name }}" onChange="{{ onName }}" placeholder="Your name" style="width:100%; margin-top:7px; padding:13px 15px; border:1px solid rgba(20,32,58,.18); border-radius:11px; background:#fff; font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#16203a;">
+              </div>
+              <div>
+                <label style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#2c5aa0;">Email</label>
+                <input type="email" value="{{ email }}" onChange="{{ onEmail }}" placeholder="you@company.com" style="width:100%; margin-top:7px; padding:13px 15px; border:1px solid rgba(20,32,58,.18); border-radius:11px; background:#fff; font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#16203a;">
+              </div>
+              <div>
+                <label style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#2c5aa0;">Message</label>
+                <textarea value="{{ message }}" onChange="{{ onMessage }}" rows="4" placeholder="Tell us about your robot or project…" style="width:100%; margin-top:7px; padding:13px 15px; border:1px solid rgba(20,32,58,.18); border-radius:11px; background:#fff; font-family:'IBM Plex Sans',sans-serif; font-size:15px; color:#16203a; resize:vertical;"></textarea>
+              </div>
+              <button type="submit" style="margin-top:4px; padding:15px 26px; border:none; border-radius:40px; background:linear-gradient(180deg,#f2c14e,#dba62f); color:#1a1408; font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:15px; cursor:pointer; box-shadow:0 8px 24px rgba(242,193,78,.3);">Send message</button>
+            </form>
+          </sc-if>
+          <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center; padding:36px 8px;">
+              <div style="width:58px; height:58px; border-radius:50%; margin:0 auto 20px; background:radial-gradient(circle at 50% 35%, #f6d579, #c1881f); display:flex; align-items:center; justify-content:center; color:#1a1408; font-size:28px;">✓</div>
+              <h3 style="font-family:'Spectral',serif; font-weight:500; font-size:26px; margin:0 0 10px; color:#16203a;">Thank you — message received.</h3>
+              <p style="font-size:15px; line-height:1.6; color:#3a486a; margin:0;">We read every note that comes in and we'll get back to you soon. In the meantime, go build something worth sharing.</p>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="background:#0a1228; padding:40px 48px; border-top:1px solid rgba(155,180,216,.12); display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:11px;">
+        <div style="width:28px; height:28px; border-radius:50%; background:radial-gradient(circle at 50% 34%, #f6d579, #c1881f); display:flex; align-items:center; justify-content:center;">
+          <div style="position:relative; width:18px; height:18px; border-radius:50%; background:#0a1228;">
+            <div style="position:absolute; top:5px; left:3px; width:4px; height:4px; border-radius:50%; background:#f6d579;"></div>
+            <div style="position:absolute; top:5px; right:3px; width:4px; height:4px; border-radius:50%; background:#f6d579;"></div>
+          </div>
+        </div>
+        <span style="font-family:'Spectral',serif; font-style:italic; font-size:17px; color:#f4ecd6;">Ape</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:#9bb4d8;">Robotics</span>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#6f86ad;">Showcase and iterate your robot without hassle · © 2026</div>
+    </footer>
+  </div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStars&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;painterlyTexture&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { name: '', email: '', message: '', submitted: false };
+
+  renderVals() {
+    return {
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.message,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      showStars: this.props.showStars ?? true,
+      painterly: this.props.painterlyTexture ?? true,
+      onName: (e) => this.setState({ name: e.target.value }),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      onMessage: (e) => this.setState({ message: e.target.value }),
+      onSubmit: (e) => {
+        e.preventDefault();
+        if ((this.state.email || '').trim() && (this.state.name || '').trim()) {
+          this.setState({ submitted: true });
+        }
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
