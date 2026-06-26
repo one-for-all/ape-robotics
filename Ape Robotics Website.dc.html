@@ -238,10 +238,27 @@ class Component extends DCLogic {
       onName: (e) => this.setState({ name: e.target.value }),
       onEmail: (e) => this.setState({ email: e.target.value }),
       onMessage: (e) => this.setState({ message: e.target.value }),
-      onSubmit: (e) => {
+      onSubmit: async (e) => {
         e.preventDefault();
-        if ((this.state.email || '').trim() && (this.state.name || '').trim()) {
-          this.setState({ submitted: true });
+        const name = (this.state.name || '').trim();
+        const email = (this.state.email || '').trim();
+        if (!name || !email) return;
+
+        const data = new FormData();
+        data.append('name', name);
+        data.append('email', email);
+        data.append('message', this.state.message || '');
+
+        try {
+          const res = await fetch('https://formspree.io/f/mqevqboa', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: data,
+          });
+          if (res.ok) this.setState({ submitted: true });
+          else alert('Something went wrong — please try again or email us directly.');
+        } catch {
+          alert('Network error — please check your connection and try again.');
         }
       },
     };
