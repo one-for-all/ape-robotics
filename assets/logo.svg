@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" role="img" aria-label="Ape Robotics">
+    <defs>
+        <radialGradient id="apeMark" cx="50%" cy="34%" r="65%">
+            <stop offset="0%" stop-color="#f6d579"/>
+            <stop offset="100%" stop-color="#c1881f"/>
+        </radialGradient>
+    </defs>
+    <circle cx="18" cy="18" r="18" fill="url(#apeMark)"/>
+    <circle cx="18" cy="18" r="12" fill="#0a1228"/>
+    <circle cx="12.5" cy="15.5" r="2.5" fill="#f6d579"/>
+    <circle cx="23.5" cy="15.5" r="2.5" fill="#f6d579"/>
+</svg>
